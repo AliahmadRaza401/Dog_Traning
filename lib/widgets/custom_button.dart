@@ -104,7 +104,7 @@ class IconTextButton extends StatelessWidget {
   final double width;
   final double height;
   final double borderRadius;
-  final Color color;
+  final Color color, bordercolor;
   final double elevation;
   final EdgeInsets padding;
 
@@ -119,6 +119,7 @@ class IconTextButton extends StatelessWidget {
     this.borderRadius = .054,
     this.elevation = 0,
     this.padding = EdgeInsets.zero,
+    this.bordercolor = const Color(0xffD9D9D9),
   }) : super(key: key);
 
   @override
@@ -130,7 +131,7 @@ class IconTextButton extends StatelessWidget {
         width: kWidth(width),
         decoration: BoxDecoration(
           color: color,
-          border: Border.all(color: const Color(0xffD9D9D9)),
+          border: Border.all(color: bordercolor),
           borderRadius: BorderRadius.all(
             Radius.circular(
               kWidth(borderRadius),

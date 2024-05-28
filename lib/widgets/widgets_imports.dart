@@ -17,11 +17,11 @@ export 'package:http/http.dart';
 export 'package:loading_overlay/loading_overlay.dart';
 export 'package:lottie/lottie.dart';
 export 'package:shared_preferences/shared_preferences.dart';
-export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+// export 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 export '../functions/apis.dart';
 export '../functions/app_functions.dart';
-export '../screens/Login.dart';
+export '../screens/login.dart';
 export '../utils/app_routes.dart';
 export '../utils/colors.dart';
 export '../utils/constants.dart';
@@ -43,3 +43,11 @@ export '../screens/store/view/store.dart';
 export '../screens/profile/modal/profilecontroller.dart';
 export '../screens/bottom_nav_bar.dart';
 export '../screens/createaccount/view/createaccount.dart';
+export '../screens/confirm_password.dart';
+export '../screens/forget_password.dart';
+export '../screens/home_screen/view/milestone.dart';
+
+export '../screens/profile/view/change_password.dart';
+export '../screens/profile/view/personal_information.dart';
+export '../screens/profile/view/pet_information.dart';
+export '../screens/store/view/grooming_service.dart';

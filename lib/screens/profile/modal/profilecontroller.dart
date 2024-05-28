@@ -5,18 +5,27 @@ class ProfileController extends GetxController {
     {
       "icon": Icons.person,
       "title": "Personal Information",
+      "func": () {
+        Get.toNamed("/personalinformation");
+      }
     },
     {
       "icon": Icons.lock_outline,
       "title": "Change Password",
+      "func": () {
+        Get.toNamed("/changepassword");
+      }
     },
     {
       "icon": Icons.history,
-      "title": "Order History",
+      "title": "Pet Information",
+      "func": () {
+        Get.toNamed("/petinformation");
+      }
     },
-    {
-      "icon": Icons.payment_outlined,
-      "title": "Payment Cards",
-    },
+    // {
+    //   "icon": Icons.payment_outlined,
+    //   "title": "Payment Cards",
+    // },
   ];
 }

@@ -179,10 +179,13 @@ class Profile extends StatelessWidget {
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return ProfileTile(
-                                icon: profileController
-                                    .profileTileContent[index]["icon"],
-                                title: profileController
-                                    .profileTileContent[index]["title"]);
+                              icon: profileController.profileTileContent[index]
+                                  ["icon"],
+                              title: profileController.profileTileContent[index]
+                                  ["title"],
+                              func: profileController.profileTileContent[index]
+                                  ["func"],
+                            );
                           },
                           separatorBuilder: (context, index) => heightBox(.02),
                           itemCount:
@@ -202,53 +205,58 @@ class Profile extends StatelessWidget {
 class ProfileTile extends StatelessWidget {
   final IconData icon;
   final String title;
+  final VoidCallback func;
   const ProfileTile({
     super.key,
     required this.icon,
     required this.title,
+    required this.func,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: kHeight(.06),
-      width: kWidth(.9),
-      decoration: BoxDecoration(
-          color: KColors.kWhite,
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xff000000).withOpacity(.1),
-              offset: const Offset(0, -1),
-              blurRadius: 4,
-            ),
-          ],
-          borderRadius: BorderRadius.circular(kWidth(.03))),
-      padding: EdgeInsets.symmetric(horizontal: kWidth(.02)),
-      child: Row(
-        children: [
-          SizedBox(
-            height: kHeight(0.07),
-            width: kWidth(.08),
-            child: Center(
-              child: Icon(
-                icon,
-                size: kHeight(.035),
-                color: KColors.kSecondary,
+    return GestureDetector(
+      onTap: func,
+      child: Container(
+        height: kHeight(.06),
+        width: kWidth(.9),
+        decoration: BoxDecoration(
+            color: KColors.kWhite,
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xff000000).withOpacity(.1),
+                offset: const Offset(0, -1),
+                blurRadius: 4,
+              ),
+            ],
+            borderRadius: BorderRadius.circular(kWidth(.03))),
+        padding: EdgeInsets.symmetric(horizontal: kWidth(.02)),
+        child: Row(
+          children: [
+            SizedBox(
+              height: kHeight(0.07),
+              width: kWidth(.08),
+              child: Center(
+                child: Icon(
+                  icon,
+                  size: kHeight(.035),
+                  color: KColors.kSecondary,
+                ),
               ),
             ),
-          ),
-          widthBox(.02),
-          SizedBox(
-            width: kWidth(.7),
-            child: CustomText(
-                alignText: TextAlign.left,
-                text: title,
-                textStyle: KTextStyles().subHeading(
-                    textColor: KColors.kTcolor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500)),
-          )
-        ],
+            widthBox(.02),
+            SizedBox(
+              width: kWidth(.7),
+              child: CustomText(
+                  alignText: TextAlign.left,
+                  text: title,
+                  textStyle: KTextStyles().subHeading(
+                      textColor: KColors.kTcolor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500)),
+            )
+          ],
+        ),
       ),
     );
   }

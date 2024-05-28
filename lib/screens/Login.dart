@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                         ),
                         heightBox(.005),
                         CustomTextField(
-                            controller: emailController,
+                            controller: passwordController,
                             label: "Enter Password",
                             hintText: "",
                             hasPrefix: false,
@@ -99,12 +99,17 @@ class Login extends StatelessWidget {
                             suffixIcon: const Icon(null),
                             prefixIcon: const Icon(null)),
                         heightBox(.01),
-                        CustomText(
-                          text: "Forget Password ?",
-                          textStyle: KTextStyles().normal(
-                              fontSize: 14,
-                              textColor: KColors.kSecondary,
-                              fontWeight: FontWeight.w400),
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/forgetpassword");
+                          },
+                          child: CustomText(
+                            text: "Forget Password ?",
+                            textStyle: KTextStyles().normal(
+                                fontSize: 14,
+                                textColor: KColors.kSecondary,
+                                fontWeight: FontWeight.w400),
+                          ),
                         ),
                         heightBox(.01),
                         PrimaryButton(

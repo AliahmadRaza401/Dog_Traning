@@ -70,10 +70,10 @@ class CustomDropdown<T> extends StatelessWidget {
                       color: KColors.kWhite,
                     ),
                     elevation: 4,
-                    scrollbarTheme: ScrollbarThemeData(
-                      radius: const Radius.circular(40),
-                      thickness: MaterialStateProperty.all(6),
-                      thumbVisibility: MaterialStateProperty.all(true),
+                    scrollbarTheme: const ScrollbarThemeData(
+                      radius: Radius.circular(40),
+                      thickness: WidgetStatePropertyAll(6),
+                      thumbVisibility: WidgetStatePropertyAll(true),
                     ),
                   ),
                   autofocus: false,
@@ -101,16 +101,22 @@ class CustomDropdown<T> extends StatelessWidget {
                                 hintText: 'Search',
                                 hintStyle: const TextStyle(fontSize: 14),
                                 enabledBorder: UnderlineInputBorder(
-                                  borderRadius: BorderRadius.circular(kWidth(.02)),
-                                  borderSide: const BorderSide(color: KColors.kGrey),
+                                  borderRadius:
+                                      BorderRadius.circular(kWidth(.02)),
+                                  borderSide:
+                                      const BorderSide(color: KColors.kGrey),
                                 ),
                                 border: UnderlineInputBorder(
-                                  borderRadius: BorderRadius.circular(kWidth(.02)),
-                                  borderSide: const BorderSide(color: KColors.kGrey),
+                                  borderRadius:
+                                      BorderRadius.circular(kWidth(.02)),
+                                  borderSide:
+                                      const BorderSide(color: KColors.kGrey),
                                 ),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderRadius: BorderRadius.circular(kWidth(.02)),
-                                  borderSide: const BorderSide(color: KColors.kPrimary),
+                                  borderRadius:
+                                      BorderRadius.circular(kWidth(.02)),
+                                  borderSide:
+                                      const BorderSide(color: KColors.kPrimary),
                                 ),
                               ),
                             ),
@@ -118,7 +124,10 @@ class CustomDropdown<T> extends StatelessWidget {
                         : const SizedBox(),
                     searchMatchFn: hasSearch
                         ? (item, searchValue) {
-                            return (item.value.toString().toLowerCase().contains(searchValue.toLowerCase()));
+                            return (item.value
+                                .toString()
+                                .toLowerCase()
+                                .contains(searchValue.toLowerCase()));
                           }
                         : null,
                     // onMenuStateChange: hasSearch
