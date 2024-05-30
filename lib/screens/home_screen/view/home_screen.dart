@@ -52,10 +52,197 @@ class HomeScreen extends StatelessWidget {
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600)),
                           Row(children: [
-                            CircleAvatar(
-                              radius: kHeight(.04),
-                              foregroundImage:
-                                  const AssetImage("assets/images/homepic.png"),
+                            GestureDetector(
+                              onTap: () {
+                                Get.bottomSheet(
+                                  isScrollControlled: true,
+                                  Container(
+                                    height: kHeight(.8),
+                                    width: kWidth(.9),
+                                    decoration: BoxDecoration(
+                                        color: KColors.kWhite,
+                                        borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(kWidth(.02)))),
+                                    padding: EdgeInsets.all(kWidth(.04)),
+                                    child: Column(
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () {
+                                            Get.back();
+                                          },
+                                          child: Align(
+                                            alignment: Alignment.topRight,
+                                            child: Icon(
+                                              Icons.cancel_outlined,
+                                              color: KColors.kBlack,
+                                            ),
+                                          ),
+                                        ),
+                                        heightBox(.02),
+                                        CircleAvatar(
+                                          radius: kHeight(.08),
+                                          foregroundImage: AssetImage(
+                                              "assets/images/logo.jpeg"),
+                                        ),
+                                        heightBox(.04),
+                                        CustomText(
+                                            maxLines: 7,
+                                            alignText: TextAlign.justify,
+                                            text:
+                                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                                            textStyle: KTextStyles().normal()),
+                                        heightBox(.06),
+                                        Image.asset(
+                                          "assets/images/dog1.png",
+                                          height: kHeight(.15),
+                                          fit: BoxFit.fill,
+                                        ),
+                                        heightBox(.04),
+                                        IconTextButton(
+                                          borderRadius: .5,
+                                          bordercolor: KColors.kSecondary,
+                                          width: kWidth(.9),
+                                          color: KColors.noColor,
+                                          text: "Book a Private Session",
+                                          img: "assets/icons/calendar.png",
+                                          function: () {
+                                            Get.bottomSheet(
+                                              isScrollControlled: true,
+                                              Container(
+                                                height: kHeight(.85),
+                                                width: kWidth(.9),
+                                                decoration: BoxDecoration(
+                                                    color: KColors.kWhite,
+                                                    borderRadius:
+                                                        BorderRadius.vertical(
+                                                            top:
+                                                                Radius.circular(
+                                                                    kWidth(
+                                                                        .02)))),
+                                                padding:
+                                                    EdgeInsets.all(kWidth(.04)),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    GestureDetector(
+                                                      onTap: () {
+                                                        Get.back();
+                                                      },
+                                                      child: Align(
+                                                        alignment:
+                                                            Alignment.topRight,
+                                                        child: Icon(
+                                                          Icons.cancel_outlined,
+                                                          color: KColors.kBlack,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    heightBox(.2),
+                                                    Image.asset(
+                                                      "assets/icons/clicker.png",
+                                                      fit: BoxFit.fill,
+                                                      height: kHeight(.35),
+                                                      width: kWidth(.6),
+                                                    ),
+                                                    heightBox(.15),
+                                                    PrimaryButton(
+                                                      borderRadius: .5,
+                                                      width: kWidth(.9),
+                                                      textColor: KColors.kWhite,
+                                                      color: KColors.kSecondary,
+                                                      text: "Press the Clicker",
+                                                      function: () {
+                                                        Get.bottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          Container(
+                                                            height:
+                                                                kHeight(.85),
+                                                            width: kWidth(.9),
+                                                            decoration: BoxDecoration(
+                                                                color: KColors
+                                                                    .kWhite,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .vertical(
+                                                                            top:
+                                                                                Radius.circular(kWidth(.02)))),
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    kWidth(
+                                                                        .04)),
+                                                            child: Column(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                GestureDetector(
+                                                                  onTap: () {
+                                                                    Get.back();
+                                                                  },
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .topRight,
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .cancel_outlined,
+                                                                      color: KColors
+                                                                          .kBlack,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                heightBox(.2),
+                                                                Image.asset(
+                                                                  "assets/icons/whistle.png",
+                                                                  fit: BoxFit
+                                                                      .fill,
+                                                                  height:
+                                                                      kHeight(
+                                                                          .25),
+                                                                  width: kWidth(
+                                                                      .6),
+                                                                ),
+                                                                heightBox(.15),
+                                                                PrimaryButton(
+                                                                  borderRadius:
+                                                                      .5,
+                                                                  width: kWidth(
+                                                                      .9),
+                                                                  textColor:
+                                                                      KColors
+                                                                          .kWhite,
+                                                                  color: KColors
+                                                                      .kSecondary,
+                                                                  text:
+                                                                      "Press the Whistle",
+                                                                  function:
+                                                                      () {},
+                                                                )
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: CircleAvatar(
+                                radius: kHeight(.04),
+                                foregroundImage: const AssetImage(
+                                    "assets/images/homepic.png"),
+                              ),
                             ),
                             widthBox(.02),
                             Column(

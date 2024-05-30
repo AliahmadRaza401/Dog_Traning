@@ -101,7 +101,7 @@ class Login extends StatelessWidget {
                         heightBox(.01),
                         GestureDetector(
                           onTap: () {
-                            Get.toNamed("/forgetpassword");
+                            Get.toNamed("/quiz");
                           },
                           child: CustomText(
                             text: "Forget Password ?",

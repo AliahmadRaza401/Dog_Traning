@@ -242,13 +242,13 @@ class TrainingBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
+            borderRadius: BorderRadius.circular(kWidth(.02)),
             child: Image.asset(
               "assets/images/home.png",
               fit: BoxFit.fill,
               height: kHeight(.15),
               width: kWidth(.4),
             ),
-            borderRadius: BorderRadius.circular(kWidth(.02)),
           ),
           heightBox(.01),
           CustomText(

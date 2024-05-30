@@ -1,7 +1,7 @@
 import '../../../widgets/widgets_imports.dart';
 
 class TrainingCourses extends StatelessWidget {
-  TrainingCourses({Key? key}) : super(key: key);
+  const TrainingCourses({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

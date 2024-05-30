@@ -45,7 +45,10 @@ class TrainingHome extends StatelessWidget {
                         height: kHeight(.3),
                         width: kWidth(.9),
                         decoration: BoxDecoration(
-                            color: KColors.kPrimary.withOpacity(.8),
+                            gradient: const LinearGradient(colors: [
+                              const Color(0xffE8CD62),
+                              Color(0xffA98700)
+                            ]),
                             borderRadius: BorderRadius.circular(
                               kWidth(.02),
                             )),
@@ -55,7 +58,7 @@ class TrainingHome extends StatelessWidget {
                             CircleAvatar(
                               radius: kWidth(.15),
                               foregroundImage:
-                                  AssetImage("assets/images/homepic.png"),
+                                  const AssetImage("assets/images/homepic.png"),
                             ),
                             heightBox(.01),
                             CustomText(
@@ -107,7 +110,7 @@ class TrainingHome extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
-                              return CoursesBox(title: "Course 1");
+                              return const CoursesBox(title: "Course 1");
                             },
                             separatorBuilder: (context, index) => widthBox(.02),
                             itemCount: 6),
@@ -194,7 +197,7 @@ class TrainingHome extends StatelessWidget {
                         text: "Book a Private Session",
                         img: "assets/icons/calendar.png",
                         function: () {
-                          Get.toNamed("/courseequipment");
+                          Get.toNamed("/journeyneeded");
                         },
                       ),
                       heightBox(.1),

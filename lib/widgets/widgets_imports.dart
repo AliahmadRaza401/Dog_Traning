@@ -51,3 +51,6 @@ export '../screens/profile/view/change_password.dart';
 export '../screens/profile/view/personal_information.dart';
 export '../screens/profile/view/pet_information.dart';
 export '../screens/store/view/grooming_service.dart';
+export '../screens/training/view/course_equipment.dart';
+export '../screens/training/view/training_courses.dart';
+export '../screens/training/view/training_home.dart';
